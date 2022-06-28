@@ -1,0 +1,14 @@
+Link para download do Git:  htpps://git-scm.com/downloads
+O Git Bash é um terminal estendido para otimizar o uso do Git.
+
+Linhas de comando usado 
+git clone (clona o repositorio do github)
+git status (verificação do estado)
+Cd (+ o diretorio a entrar)
+git status (verificação do estado)
+git add . ( para adicionar todos os arquivo.)
+git status (verificação do estado)
+git commit -m "" <- observação entre a "" enserir discrição ou comentario coerente.
+git status (verificação do estado)
+git push origin main (enviando todos os commit para a Nuven.)
+
