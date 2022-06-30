@@ -1,0 +1,715 @@
+				Css3
+
+Cascading Style Sheets (CSS) é uma linguagem de folha de estilo usada para descrever o visual e a formatação de um documento escrito em uma linguagem de marcação. CSS3 é um padrão mais recente de versões anteriores css (CSS2). A principal diferença entre css2 e css3 é a seguinte −
+
+Consultas de mídia
+Espaços de nome
+Seletores Nível 3
+Cor
+Módulos CSS3
+CSS3 é colaboração de especificações CSS2 e novas especificações, podemos chamar essa colaboração é módulo. Alguns dos módulos são mostrados abaixo −
+
+Selectors
+Modelo de caixa
+Fundos
+Valores de imagem e conteúdo substituído
+Efeitos de texto
+Transformações 2D
+Transformações 3D
+Animações
+Layout de várias colunas
+Interface do usuário
+
+ 					Box model
+
+Resumo
+Em uma página WEB, cada elemento é representado como um box retangular. Determinar o tamanho, propriedades - como sua cor, fundo, estilo das bordas - e a posição desses boxes é o objetivo do mecanismo de renderização.
+
+No CSS, cada um desses boxes retangulares é descrita usando o box model padrão. Este modelo descreve o conteúdo do espaço ocupado por um elemento. Cada box possui 4 edges: margin edge, border edge, padding edge e content edge.
+
+
+					CSS Box model
+
+
+
+A área de conteúdo (content area) é a área ocupada pelo conteúdo real do elemento. Ele frequentamente possui um fundo, uma cor de fonte ou uma imagem (nessa ordem, uma imagem opaca esconde a cor de fundo) e é localizada dentro do content edge; suas dimensões são a largura do conteúdo, ou largura do box de conteúdo, e altura do conteúdo, ou altura do box de conteúdo.
+
+Se a propriedade CSS box-sizing está configurada como padrão, as propriedades CSS width, min-width (en-US), max-width, height, min-height e max-height (en-US) controlam o tamanho do conteúdo.
+
+A área de preenchimento (padding area) estende-se para a borda em torno do enchimento. Quando a área de conteúdo tem um fundo, cor ou imagem, isso será estendido para a área de preenchimento, por esse motivo, você pode pensar o preenchimento como a extensão do conteúdo. O preenchimento está localizado dentro do padding edge, e suas dimensões são a largura do padding-box e a altura do padding-box.
+
+O espaço entre os edges de preenchimento e conteúdo podem ser controlados utilizando as seguintes propriedades CSS padding-top (en-US), padding-right (en-US), padding-bottom (en-US), padding-left e na forma generalizada padding.
+
+A área de borda (border area) estende a área de preenchimento para a área que contém as bordas. Esta é a área de dentro do border edge, e suas dimensões são a largura e a altura do border-box. Esta área depende do tamanho da borda que está definido pela propriedade border-width (en-US) ou pela propriedade border (en-US).
+
+A área de margem (margin area) estende a área de borda com um espaço vazio utilizado para separar o elemento dos elementos vizinhos. Esta é a área de dentro do margin edge, e suas dimensões são a largura e a altura do margin-box.
+
+O tamanho da área de margem é controlada utilizando as seguintes propriedades CSS margin-top, margin-right (en-US), margin-bottom, margin-left (en-US) e na forma generalizada margin.
+
+Quando ocorre um colapso de margens (en-US), a área de margem não está claramente definida, uma vez que as margens são compartilhadas entre os boxes.
+
+Finalmente, note que, para elementos não substituídos inline, o total de espaço ocupado (para a altura da linha) é determinado pela propriedade line-height (en-US), mesmo que a borda e o padding aparecerem visualmente em torno do conteúdo.
+
+
+
+CSS3 tem suporte a propriedades adicionais de cores da seguinte forma −
+
+	Cores RGBA
+	Cores HSL
+	Cores HSLA
+	Opacidade
+RGBA significa Vermelho Verde Azul Alfa. É uma extensão do CSS2, Alpha especifica a opacidade de uma cor e o número do parâmetro é um numérico entre 0,0 e 1.0. Uma sintaxe amostra de RGBA como mostrado abaixo −
+
+#d1 {background-color: rgba(255, 0, 0, 0.5);}
+#d2 {background-color: rgba(0, 255, 0, 0.5);}
+#d3 {background-color: rgba(0, 0, 255, 0.5);}
+
+HSL significa matiz, saturação, leveza. Aqui Enorme é um grau na roda de cor, saturação e leveza são valores percentuais entre 0 a 100%. Uma sintaxe amostra de HSL como mostrado abaixo −
+
+#g1 {background-color: hsl(120, 100%, 50%);}
+#g2 {background-color: hsl(120, 100%, 75%);}
+#g3 {background-color: hsl(120, 100%, 25%);}
+
+HSLA significa matiz, saturação, leveza e alfa. O valor alfa especifica a opacidade como mostrado RGBA. Uma sintaxe amostra de HSLA como mostrado abaixo −
+
+#g1 {background-color: hsla(120, 100%, 50%, 0.3);}
+#g2 {background-color: hsla(120, 100%, 75%, 0.3);}
+#g3 {background-color: hsla(120, 100%, 25%, 0.3);}
+
+opacidade é uma tinta mais fina precisa de preto adicionado para aumentar a opacidade. Uma sintaxe amostra de opacidade é mostrada abaixo −
+
+#g1 {background-color:rgb(255,0,0);opacity:0.6;}
+#g2 {background-color:rgb(0,255,0);opacity:0.6;}
+#g3 {background-color:rgb(0,0,255);opacity:0.6;}
+
+O exemplo a seguir mostra a propriedade de cor rgba.
+
+ Demonstração ao vivo
+<html>
+   <head>
+      <style>
+         #p1 {background-color:rgba(255,0,0,0.3);}
+         #p2 {background-color:rgba(0,255,0,0.3);}
+         #p3 {background-color:rgba(0,0,255,0.3);}
+      </style>
+   </head>
+
+   <body>
+      <p>RGBA colors:</p>
+      <p id = "p1">Red</p>
+      <p id = "p2">Green</p>
+      <p id = "p3">Blue</p>
+   </body>
+</html>
+Ele produzirá o seguinte resultado −
+
+
+O exemplo a seguir mostra a propriedade de cor HSL.
+
+ Demonstração ao vivo
+<html>
+   <head>
+      <style>
+         #g1 {background-color:hsl(120, 100%, 50%);}
+         #g2 {background-color:hsl(120,100%,75%);}
+         #g3 {background-color:hsl(120,100%,25%);}
+      </style>
+   </head>
+
+   <body>
+      <p>HSL colors:</p>
+      <p id = "g1">Green</p>
+      <p id = "g2">Normal Green</p>
+      <p id = "g3">Dark Green</p>
+   </body>
+</html>
+Ele produzirá o seguinte resultado −
+
+
+O exemplo a seguir mostra a propriedade de cores HSLA.
+
+ Demonstração ao vivo
+<html>
+   <head>
+      <style>
+         #d1 {background-color:hsla(120,100%,50%,0.3);}
+         #d2 {background-color:hsla(120,100%,75%,0.3);}
+         #d3 {background-color:hsla(120,100%,25%,0.3);}
+      </style>
+   </head>
+
+   <body>
+      <p>HSLA colors:</p>
+      <p id = "d1">Less opacity green</p>
+      <p id = "d2">Green</p>
+      <p id = "d3">Green</p>
+   </body>
+</html>
+Ele produzirá o seguinte resultado −
+
+
+O exemplo a seguir mostra a propriedade opacidade.
+
+ Demonstração ao vivo
+<html>
+   <head>
+      <style>
+         #m1 {background-color:rgb(255,0,0);opacity:0.6;} 
+         #m2 {background-color:rgb(0,255,0);opacity:0.6;} 
+         #m3 {background-color:rgb(0,0,255);opacity:0.6;}
+      </style>
+   </head>
+
+   <body>
+      <p>HSLA colors:</p>
+      <p id = "m1">Red</p>
+      <p id = "m2">Green</p>
+      <p id = "m3">Blue</p>
+   </body>
+</html>
+
+					CSS - Sintaxe
+
+ Página anterior
+Próxima Página  
+Um CSS é composto por regras de estilo que são interpretadas pelo navegador e, em seguida, aplicadas aos elementos correspondentes em seu documento. Uma regra de estilo é feita de três partes −
+
+Seletor − Um seletor é uma tag HTML na qual um estilo será aplicado. Isso pode ser qualquer tag como <h1> ou <table> etc.
+
+Propriedade − Uma propriedade é um tipo de atributo da tag HTML. Simplificando, todos os atributos HTML são convertidos em propriedades CSS. Podem ser de cor, fronteira etc.
+
+Valor − Os valores são atribuídos às propriedades. Por exemplo, a propriedade colorida pode ter valor vermelho ou #F1F1F1 etc.
+
+Você pode colocar a sintaxe da regra do estilo CSS da seguinte forma −
+
+selector { property: value }
+Sintaxe
+Exemplo − Você pode definir uma borda de tabela da seguinte forma −
+
+table{ border :1px solid #C00; }
+Aqui a tabela é um seletor e a fronteira é uma propriedade e dado valor 1px sólido #C00 é o valor dessa propriedade.
+
+Você pode definir seletores de várias maneiras simples com base no seu conforto. Deixe-me colocar esses seletores um por um.
+
+Os seletores de tipo
+Este é o mesmo seletor que vimos acima. Mais uma vez, mais um exemplo para dar uma cor a todos os títulos de nível 1 −
+
+h1 {
+   color: #36CFFF; 
+}
+Os Seletores Universais
+Em vez de selecionar elementos de um tipo específico, o seletor universal simplesmente corresponde ao nome de qualquer tipo de elemento −
+
+* { 
+   color: #000000; 
+}
+Esta regra torna o conteúdo de cada elemento em nosso documento em preto.
+
+Os seletores descendentes
+Suponha que você queira aplicar uma regra de estilo a um determinado elemento apenas quando ele estiver dentro de um elemento específico. Como dado no exemplo a seguir, a regra de estilo se aplicará ao elemento <em> somente quando estiver dentro <ul> tag.
+
+ul em {
+   color: #000000; 
+}
+Os seletores de classe
+Você pode definir regras de estilo com base no atributo de classe dos elementos. Todos os elementos que têm essa classe serão formatados de acordo com a regra definida.
+
+.black {
+   color: #000000; 
+}
+Esta regra torna o conteúdo em preto para cada elemento com atributo de classe definido como preto em nosso documento. Você pode torná-lo um pouco mais particular. Por exemplo –
+
+h1.black {
+   color: #000000; 
+}
+Esta regra torna o conteúdo em preto apenas <h1> elementos com atributo de classe definido para preto.
+
+Você pode aplicar mais de um seletor de classe para o elemento dado. Considere o exemplo a seguir −
+
+<p class = "center bold">
+   This para will be styled by the classes center and bold.
+</p>
+Os seletores de ID
+Você pode definir regras de estilo com base no atributo id dos elementos. Todos os elementos que têm esse id serão formatados de acordo com a regra definida.
+
+#black {
+   color: #000000; 
+}
+Esta regra torna o conteúdo em preto para cada elemento com atributo de identificação definido como preto em nosso documento. Você pode torná-lo um pouco mais particular. Por exemplo –
+
+h1#black {
+   color: #000000; 
+}
+Esta regra torna o conteúdo em preto por apenas <h1> elementos com atributo id definido para preto.
+
+O verdadeiro poder dos seletores de id é quando eles são usados como base para seletores descendentes, por exemplo −
+
+#black h2 {
+   color: #000000; 
+}
+Neste exemplo, todos os títulos de nível 2 serão exibidos na cor preta quando esses títulos serão colocados em tags com atributo de identificação definido como preto.
+
+Os seletores de crianças
+Você viu os seletores descendentes. Há mais um tipo de seletor, que é muito semelhante aos descendentes, mas tem funcionalidade diferente. Considere o exemplo a seguir −
+
+body > p {
+   color: #000000; 
+}
+Esta regra tornará todos os parágrafos em preto se forem filhos diretos de < elemento> corpo. Outros parágrafos colocados dentro de outros elementos como <div> ou <td> não teriam qualquer efeito desta regra.
+
+Os seletores de atributos
+Você também pode aplicar estilos a elementos HTML com atributos específicos. A regra de estilo abaixo corresponderá a todos os elementos de entrada que têm um atributo tipo com um valor de texto −
+
+input[type = "text"] {
+   color: #000000; 
+}
+A vantagem deste método é que o tipo de <input = "submit" /> elemento não é afetado, e a cor aplicada apenas aos campos de texto desejados.
+
+Existem regras seguintes aplicadas ao seletor de atributos.
+
+p[lang] − Seleciona todos os elementos de parágrafo com um atributo lang.
+
+p[lang="fr"] − Seleciona todos os elementos de parágrafo cujo atributo lang tem um valor exatamente "fr".
+
+p[lang~="fr"] − Seleciona todos os elementos de parágrafo cujo atributo lang contém a palavra "fr".
+
+p[lang|="en"] − Seleciona todos os elementos de parágrafo cujo atributo lang contém valores que são exatamente "en", ou começar com "en-".
+
+Regras de estilo múltiplos
+Você pode precisar definir várias regras de estilo para um único elemento. Você pode definir essas regras para combinar várias propriedades e valores correspondentes em um único bloco conforme definido no exemplo a seguir −
+
+h1 {
+   color: #36C;
+   font-weight: normal;
+   letter-spacing: .4em;
+   margin-bottom: 1em;
+   text-transform: lowercase;
+}
+Aqui todos os pares de bens e valores são separados por um ponto e vírgula (;). Você pode mantê-los em uma única linha ou várias linhas. Para melhor legibilidade, mantemos-nas em linhas separadas.
+
+Por um tempo, não se preocupe com as propriedades mencionadas no bloco acima. Essas propriedades serão explicadas nos próximos capítulos e você pode encontrar detalhes completos sobre propriedades em Referências CSS
+
+Seletores de agrupamento
+Você pode aplicar um estilo a muitos seletores, se quiser. Basta separar os seletores com uma círgula, conforme dado no exemplo a seguir −
+
+h1, h2, h3 {
+   color: #36C;
+   font-weight: normal;
+   letter-spacing: .4em;
+   margin-bottom: 1em;
+   text-transform: lowercase;
+}
+Esta regra de estilo definido será aplicável também ao elemento h1, h2 e h3. A ordem da lista é irrelevante. Todos os elementos do seletor terão as declarações correspondentes aplicadas a eles.
+
+Você pode combinar os vários seletores de id juntos como mostrado abaixo −
+
+#content, #footer, #supplement {
+   position: absolute;
+   left: 510px;
+   width: 200px;
+
+				CSS - Fundos/background
+
+ Página anterior
+Próxima Página  
+Este capítulo ensina como definir os fundos de vários elementos HTML. Você pode definir as seguintes propriedades de fundo de um elemento −
+
+A propriedade de cor de fundo é usada para definir a cor de fundo de um elemento.
+
+A propriedade de imagem de fundo é usada para definir a imagem de fundo de um elemento.
+
+A propriedade de repetição de fundo é usada para controlar a repetição de uma imagem em segundo plano.
+
+A propriedade de posição de fundo é usada para controlar a posição de uma imagem em segundo plano.
+
+A propriedade de fixação de fundo é usada para controlar a rolagem de uma imagem em segundo plano.
+
+A propriedade de fundo é usada como abreviação para especificar uma série de outras propriedades de fundo.
+
+Defina a cor de fundo
+A seguir está o exemplo que demonstra como definir a cor de fundo para um elemento.
+
+ Demonstração ao vivo
+<html>
+   <head>
+   </head>
+
+   <body>
+      <p style = "background-color:yellow;">
+         This text has a yellow background color.
+      </p>
+   </body>
+</html> 
+Isso produzirá o seguinte resultado −
+
+
+Defina a imagem de fundo
+Podemos definir a imagem de fundo chamando imagens armazenadas locais como mostrado abaixo −
+
+ Demonstração ao vivo
+<html>
+   <head>
+      <style>
+         body  {
+            background-image: url("/css/images/css.jpg");
+            background-color: #cccccc;
+         }
+      </style>
+   </head>
+   
+   <body>
+      <h1>Hello World!</h1>
+   </body>
+<html>
+Ele produzirá o seguinte resultado −
+
+
+Repita a imagem de fundo
+O exemplo a seguir demonstra como repetir a imagem de fundo se uma imagem for pequena. Você pode usar o valor sem repetição para a propriedade de repetição de fundo se você não quiser repetir uma imagem, neste caso a imagem será exibida apenas uma vez.
+
+Por padrão, a propriedade de repetição de fundo terá valor repetido.
+
+ Demonstração ao vivo
+<html>
+   <head>
+      <style>
+         body {
+            background-image: url("/css/images/css.jpg");
+            background-repeat: repeat;
+         }
+      </style>
+   </head>
+
+   <body>
+      <p>Tutorials point</p>
+   </body>
+</html>
+Ele produzirá o seguinte resultado −
+
+
+O exemplo a seguir que demonstra como repetir a imagem de fundo verticalmente.
+
+ Demonstração ao vivo
+<html>
+   <head>
+      <style>
+         body {
+            background-image: url("/css/images/css.jpg");
+            background-repeat: repeat-y;
+         }
+      </style>
+   </head>
+
+   <body>
+      <p>Tutorials point</p>
+   </body>
+</html>
+Ele produzirá o seguinte resultado −
+
+
+O exemplo a seguir demonstra como repetir a imagem de fundo horizontalmente.
+
+ Demonstração ao vivo
+<html>
+   <head>
+      <style>
+         body {
+            background-image: url("/css/images/css.jpg");
+            background-repeat: repeat-x;
+         }
+      </style>
+   </head>
+   
+   <body>
+      <p>Tutorials point</p>
+   </body>
+</html>
+Ele produzirá o seguinte resultado −
+
+
+
+Defina a posição da imagem de fundo
+O exemplo a seguir demonstra como definir a posição da imagem de fundo a 100 pixels do lado esquerdo.
+
+ Demonstração ao vivo
+<html>
+   <head>
+      <style>
+         body {
+            background-image: url("/css/images/css.jpg");
+            background-position:100px;
+         }
+      </style>
+   </head>
+
+   <body>
+      <p>Tutorials point</p>
+   </body>
+</html>
+Ele produzirá o seguinte resultado −
+
+
+O exemplo a seguir demonstra como definir a posição de imagem de fundo 100 pixels de distância do lado esquerdo e 200 pixels para baixo da parte superior.
+
+ Demonstração ao vivo
+<html>
+   <head>
+      <style>
+         body {
+            background-image: url("/css/images/css.jpg");
+            background-position:100px 200px;
+         }
+      </style>
+   </head>
+
+   <body>
+      <p>Tutorials point</p>
+   </body>
+</html>
+Ele produzirá o seguinte resultado −
+
+
+Defina o anexo de fundo
+O anexo de fundo determina se uma imagem de fundo é fixa ou rola com o resto da página.
+
+O exemplo a seguir demonstra como definir a imagem de fundo fixo.
+
+ Demonstração ao vivo
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         body {
+            background-image: url('/css/images/css.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+         }
+      </style>
+   </head>
+
+   <body>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+   </body>
+</html>
+Ele produzirá o seguinte resultado −
+
+
+O exemplo a seguir demonstra como definir a imagem de fundo de rolagem.
+
+ Demonstração ao vivo
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         body {
+            background-image: url('/css/images/css.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-attachment:scroll;
+         }
+      </style>
+   </head>
+
+   <body>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+      <p>The background-image is fixed. Try to scroll down the page.</p>
+   </body>
+</html>
+Ele produzirá o seguinte resultado −
+
+
+Propriedade taquigrafia
+Você pode usar a propriedade de fundo para definir todas as propriedades de fundo ao mesmo tempo. Por exemplo –
+
+<p style = "background:url(/images/pattern1.gif) repeat fixed;">
+This parapgraph has fixed repeated background image.
+</p
+
+				CSS - Fontes
+
+ Página anterior
+Próxima Página  
+Este capítulo ensina como definir fontes de um conteúdo, disponíveis em um elemento HTML. Você pode definir as seguintes propriedades de fonte de um elemento −
+
+A propriedade font-family é usada para alterar a face de uma fonte.
+
+A propriedade no estilo fonte é usada para tornar uma fonte itálica ou oblíqua.
+
+A propriedade de variante de fonte é usada para criar um efeito de pequenas tampas.
+
+A propriedade de peso de fonte é usada para aumentar ou diminuir o quão ousada ou leve uma fonte aparece.
+
+A propriedade do tamanho da fonte é usada para aumentar ou diminuir o tamanho de uma fonte.
+
+A propriedade da fonte é usada como abreviação para especificar uma série de outras propriedades de fonte.
+
+Defina a família font
+A seguir está o exemplo, que demonstra como definir a família de fontes de um elemento. O valor possível pode ser qualquer nome da família da fonte.
+
+ Demonstração ao vivo
+<html>
+   <head>
+   </head>
+
+   <body>
+      <p style = "font-family:georgia,garamond,serif;">
+         This text is rendered in either georgia, garamond, or the 
+         default serif font depending on which font  you have at your system.
+      </p>
+   </body>
+</html>
+Isso produzirá o seguinte resultado −
+
+
+
+Defina o estilo de fonte
+A seguir está o exemplo, que demonstra como definir o estilo de fonte de um elemento. Os valores possíveis são normais, itálicos e oblíquos.
+
+ Demonstração ao vivo
+<html>
+   <head>
+   </head>
+
+   <body>
+      <p style = "font-style:italic;">
+         This text will be rendered in italic style
+      </p>
+   </body>
+</html> 
+Isso produzirá o seguinte resultado −
+
+
+Defina a variante da fonte
+O exemplo a seguir demonstra como definir a variante de fonte de um elemento. Os valores possíveis são normais e de small-caps.
+
+ Demonstração ao vivo
+<html>
+   <head>
+   </head>
+
+   <body>
+      <p style = "font-variant:small-caps;">
+         This text will be rendered as small caps
+      </p>
+   </body>
+</html> 
+Isso produzirá o seguinte resultado −
+
+
+ANÚNCIO
+Defina o peso da fonte
+O exemplo a seguir demonstra como definir o peso da fonte de um elemento. A propriedade de peso de fonte fornece a funcionalidade para especificar o quão ousada é uma fonte. Os valores possíveis poderiam ser normais, ousados, mais ousados, mais leves, 100, 200, 300, 400, 500, 600, 700, 800, 900.
+
+ Demonstração ao vivo
+<html>
+   <head>
+   </head>
+
+   <body>
+      <p style = "font-weight:bold;">
+         This font is bold.
+      </p>
+      
+      <p style = "font-weight:bolder;">
+         This font is bolder.
+      </p>
+      
+      <p style = "font-weight:500;">
+         This font is 500 weight.
+      </p>
+   </body>
+</html> 
+Isso produzirá o seguinte resultado −
+
+
+Defina o tamanho da fonte
+O exemplo a seguir demonstra como definir o tamanho da fonte de um elemento. A propriedade do tamanho da fonte é usada para controlar o tamanho das fontes. Os valores possíveis podem ser xx-pequenos, x-pequenos, pequenos, médios, grandes, x-grandes, xx-grande, menores, maiores, tamanho em pixels ou em %.
+
+ Demonstração ao vivo
+<html>
+   <head>
+   </head>
+
+   <body>
+      <p style = "font-size:20px;">
+         This font size is 20 pixels
+      </p>
+      
+      <p style = "font-size:small;">
+         This font size is small
+      </p>
+      
+      <p style = "font-size:large;">
+         This font size is large
+      </p>
+   </body>
+</html> 
+This will produce following result −
+
+
+Set the Font Size Adjust
+The following example demonstrates how to set the font size adjust of an element. This property enables you to adjust the x-height to make fonts more legible. Possible value could be any number.
+
+ Live Demo
+<html>
+   <head>
+   </head>
+
+   <body>
+      <p style = "font-size-adjust:0.61;">
+         This text is using a font-size-adjust value.
+      </p>
+   </body>
+</html> 
+This will produce following result −
+
+
+Set the Font Stretch
+The following example demonstrates how to set the font stretch of an element. This property relies on the user's computer to have an expanded or condensed version of the font being used.
+
+Possible values could be normal, wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded.
+
+ Live Demo
+<html>
+   <head>
+   </head>
+
+   <body>
+      <p style = "font-stretch:ultra-expanded;">
+         If this doesn't appear to work, it is likely that your computer 
+         doesn't have a <br>condensed or expanded version of the font being used.
+      </p>
+   </body>
+</html> 
+This will produce following result −
+
+
+Propriedade taquigrafia
+Você pode usar a propriedade da fonte para definir todas as propriedades da fonte de uma só vez. Por exemplo –
+
+ Demonstração ao vivo
+<html>
+   <head>
+   </head>
+
+   <body>
+      <p style = "font:italic small-caps bold 15px georgia;">
+         Applying all the properties on the text at once.
+      </p>
+   </body>
+</html>
